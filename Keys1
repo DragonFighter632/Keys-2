@@ -1,0 +1,11 @@
+def sum_negative_between_max_min(arr):
+    max_index = arr.index(max(arr))
+    min_index = arr.index(min(arr))
+    
+    start, end = sorted([max_index, min_index])
+    return sum(x for x in arr[start + 1:end] if x < 0)
+
+# Пример использования
+A = [3, -1, 4, -2, 5, -3, 2]
+result = sum_negative_between_max_min(A)
+print(result)
